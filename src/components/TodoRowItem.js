@@ -1,9 +1,10 @@
-function TodoRowItem() {
+function TodoRowItem(pros) {
+
     return (
         <tr>
-            <th scope='row'>1</th>
-            <td>Code your project</td>
-            <td>Sushil</td>
+            <th scope='row'>{pros.rowNumber}</th>
+            <td>{pros.rowDescription}</td>
+            <td>{pros.rowAssigned}</td>
         </tr>
     );
 }
