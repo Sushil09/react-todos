@@ -20,7 +20,6 @@ function TodoTable(props) {
                             rowAssigned={todo.rowAssigned}
                             deleteTodo={props.deleteTodo}
                         />
-
                     ))
                 }
             </tbody>

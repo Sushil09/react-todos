@@ -15,6 +15,8 @@ function App() {
     { rowNumber: 4, rowDescription: "Charge Laptop", rowAssigned: "User 2" }
   ]);
 
+  const [showAddTodoForm,setAddTodoForm] = useState(false);
+
   const addToDo = (description, assigned) => {
     let rowNumber=0
     if (todos.length > 0)
@@ -47,10 +49,10 @@ function App() {
         </div>
         <div className='card-body'>
           <TodoTable todos={todos} deleteTodo={deleteTodo}/>
-          <button className='btn btn-primary' onClick={addToDo}>
-            Add new Todo
+          <button onClick={() => setAddTodoForm(!showAddTodoForm)}  className='btn btn-primary'>
+            {showAddTodoForm? 'Close New Todo':'New Todo'}
           </button>
-          <NewTodoForm addToDo={addToDo}/>
+          {showAddTodoForm && <NewTodoForm addToDo={addToDo}/>}
         </div>
       </div>
     </div>
